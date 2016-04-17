@@ -15,17 +15,17 @@
 -->
 <resources>
     <style name="OptRoundCardView">
-        <item name="cardBackgroundColor">@color/opt_round_card_view_light_background</item>
-        <item name="cardCornerRadius">@dimen/opt_round_card_view_default_radius</item>
-        <item name="cardElevation">@dimen/opt_round_card_view_default_elevation</item>
-        <item name="cardMaxElevation">@dimen/opt_round_card_view_default_elevation</item>
-        <item name="cardUseCompatPadding">false</item>
-        <item name="cardPreventCornerOverlap">true</item>
+        <item name="optRoundCardBackgroundColor">@color/opt_round_card_view_light_background</item>
+        <item name="optRoundCardCornerRadius">@dimen/opt_round_card_view_default_radius</item>
+        <item name="optRoundCardElevation">@dimen/opt_round_card_view_default_elevation</item>
+        <item name="optRoundCardMaxElevation">@dimen/opt_round_card_view_default_elevation</item>
+        <item name="optRoundCardUseCompatPadding">false</item>
+        <item name="optRoundCardPreventCornerOverlap">true</item>
     </style>
     <style name="OptRoundCardView.Light">
-        <item name="cardBackgroundColor">@color/opt_round_card_view_light_background</item>
+        <item name="optRoundCardBackgroundColor">@color/opt_round_card_view_light_background</item>
     </style>
     <style name="OptRoundCardView.Dark">
-        <item name="cardBackgroundColor">@color/opt_round_card_view_dark_background</item>
+        <item name="optRoundCardBackgroundColor">@color/opt_round_card_view_dark_background</item>
     </style>
 </resources>

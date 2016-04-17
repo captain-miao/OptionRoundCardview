@@ -10,6 +10,7 @@ Support Android 2.1+
 
 ## layout
 ```
+    //attribute:cardCornerRadius replace optRoundCardCornerRadius
     <com.github.captain_miao.optroundcardview.OptRoundCardView
         android:id="@+id/top_card_view"
         android:layout_width="match_parent"
@@ -17,9 +18,9 @@ Support Android 2.1+
         android:layout_marginTop="@dimen/activity_horizontal_margin"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
-        app:cardCornerRadius="8dp"
-        app:cardLeftBottomCorner="false"
-        app:cardRightBottomCorner="false">
+        app:optRoundCardCornerRadius="8dp"
+        app:optRoundCardLeftBottomCorner="false"
+        app:optRoundCardRightBottomCorner="false">
 
         <TextView
             android:id="@+id/section_label"

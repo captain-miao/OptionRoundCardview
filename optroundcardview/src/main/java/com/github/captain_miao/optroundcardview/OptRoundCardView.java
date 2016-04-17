@@ -202,36 +202,36 @@ public class OptRoundCardView extends FrameLayout implements CardViewDelegate {
     private void initialize(Context context, AttributeSet attrs, int defStyleAttr) {
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.OptRoundCardView, defStyleAttr,
                 R.style.OptRoundCardView_Light);
-        int backgroundColor = a.getColor(R.styleable.OptRoundCardView_cardBackgroundColor, 0);
-        float radius = a.getDimension(R.styleable.OptRoundCardView_cardCornerRadius, 0);
-        float elevation = a.getDimension(R.styleable.OptRoundCardView_cardElevation, 0);
-        float maxElevation = a.getDimension(R.styleable.OptRoundCardView_cardMaxElevation, 0);
-        mCompatPadding = a.getBoolean(R.styleable.OptRoundCardView_cardUseCompatPadding, false);
-        mPreventCornerOverlap = a.getBoolean(R.styleable.OptRoundCardView_cardPreventCornerOverlap, true);
-        int defaultPadding = a.getDimensionPixelSize(R.styleable.OptRoundCardView_contentPadding, 0);
-        mContentPadding.left = a.getDimensionPixelSize(R.styleable.OptRoundCardView_contentPaddingLeft,
+        int backgroundColor = a.getColor(R.styleable.OptRoundCardView_optRoundCardBackgroundColor, 0);
+        float radius = a.getDimension(R.styleable.OptRoundCardView_optRoundCardCornerRadius, 0);
+        float elevation = a.getDimension(R.styleable.OptRoundCardView_optRoundCardElevation, 0);
+        float maxElevation = a.getDimension(R.styleable.OptRoundCardView_optRoundCardMaxElevation, 0);
+        mCompatPadding = a.getBoolean(R.styleable.OptRoundCardView_optRoundCardUseCompatPadding, false);
+        mPreventCornerOverlap = a.getBoolean(R.styleable.OptRoundCardView_optRoundCardPreventCornerOverlap, true);
+        int defaultPadding = a.getDimensionPixelSize(R.styleable.OptRoundCardView_optRoundContentPadding, 0);
+        mContentPadding.left = a.getDimensionPixelSize(R.styleable.OptRoundCardView_optRoundContentPaddingLeft,
                 defaultPadding);
-        mContentPadding.top = a.getDimensionPixelSize(R.styleable.OptRoundCardView_contentPaddingTop,
+        mContentPadding.top = a.getDimensionPixelSize(R.styleable.OptRoundCardView_optRoundContentPaddingTop,
                 defaultPadding);
-        mContentPadding.right = a.getDimensionPixelSize(R.styleable.OptRoundCardView_contentPaddingRight,
+        mContentPadding.right = a.getDimensionPixelSize(R.styleable.OptRoundCardView_optRoundContentPaddingRight,
                 defaultPadding);
-        mContentPadding.bottom = a.getDimensionPixelSize(R.styleable.OptRoundCardView_contentPaddingBottom,
+        mContentPadding.bottom = a.getDimensionPixelSize(R.styleable.OptRoundCardView_optRoundContentPaddingBottom,
                 defaultPadding);
         if (elevation > maxElevation) {
             maxElevation = elevation;
         }
 
         int cornerFlag = 0;
-        boolean flag = a.getBoolean(R.styleable.OptRoundCardView_cardLeftTopCorner, true);
+        boolean flag = a.getBoolean(R.styleable.OptRoundCardView_optRoundCardLeftTopCorner, true);
         cornerFlag += flag ? OptRoundRectDrawable.FLAG_LEFT_TOP_CORNER : 0;
 
-        flag = a.getBoolean(R.styleable.OptRoundCardView_cardRightTopCorner, true);
+        flag = a.getBoolean(R.styleable.OptRoundCardView_optRoundCardRightTopCorner, true);
         cornerFlag += flag ? OptRoundRectDrawable.FLAG_RIGHT_TOP_CORNER : 0;
 
-        flag = a.getBoolean(R.styleable.OptRoundCardView_cardLeftBottomCorner, true);
+        flag = a.getBoolean(R.styleable.OptRoundCardView_optRoundCardLeftBottomCorner, true);
         cornerFlag += flag ? OptRoundRectDrawable.FLAG_LEFT_BOTTOM_CORNER : 0;
 
-        flag = a.getBoolean(R.styleable.OptRoundCardView_cardRightBottomCorner, true);
+        flag = a.getBoolean(R.styleable.OptRoundCardView_optRoundCardRightBottomCorner, true);
         cornerFlag += flag ? OptRoundRectDrawable.FLAG_RIGHT_BOTTOM_CORNER : 0;
 
         a.recycle();

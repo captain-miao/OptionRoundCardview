@@ -17,34 +17,34 @@
 <resources>
     <declare-styleable name="OptRoundCardView">
         <!-- Background color for CardView. -->
-        <attr name="cardBackgroundColor" format="color" />
+        <attr name="optRoundCardBackgroundColor" format="color" />
         <!-- Corner radius for CardView. -->
-        <attr name="cardLeftTopCorner" format="boolean" />
+        <attr name="optRoundCardLeftTopCorner" format="boolean" />
         <!-- Corner radius for CardView. -->
-        <attr name="cardRightTopCorner" format="boolean" />
+        <attr name="optRoundCardRightTopCorner" format="boolean" />
         <!-- Corner radius for CardView. -->
-        <attr name="cardLeftBottomCorner" format="boolean" />
+        <attr name="optRoundCardLeftBottomCorner" format="boolean" />
         <!-- Corner radius for CardView. -->
-        <attr name="cardRightBottomCorner" format="boolean" />
+        <attr name="optRoundCardRightBottomCorner" format="boolean" />
         <!-- Corner radius for CardView. -->
-        <attr name="cardCornerRadius" format="dimension" />
+        <attr name="optRoundCardCornerRadius" format="dimension" />
         <!-- Elevation for CardView. -->
-        <attr name="cardElevation" format="dimension" />
+        <attr name="optRoundCardElevation" format="dimension" />
         <!-- Maximum Elevation for CardView. -->
-        <attr name="cardMaxElevation" format="dimension" />
+        <attr name="optRoundCardMaxElevation" format="dimension" />
         <!-- Add padding in API v21+ as well to have the same measurements with previous versions. -->
-        <attr name="cardUseCompatPadding" format="boolean" />
+        <attr name="optRoundCardUseCompatPadding" format="boolean" />
         <!-- Add padding to CardView on v20 and before to prevent intersections between the Card content and rounded corners. -->
-        <attr name="cardPreventCornerOverlap" format="boolean" />
+        <attr name="optRoundCardPreventCornerOverlap" format="boolean" />
         <!-- Inner padding between the edges of the Card and children of the CardView. -->
-        <attr name="contentPadding" format="dimension" />
+        <attr name="optRoundContentPadding" format="dimension" />
         <!-- Inner padding between the left edge of the Card and children of the CardView. -->
-        <attr name="contentPaddingLeft" format="dimension" />
+        <attr name="optRoundContentPaddingLeft" format="dimension" />
         <!-- Inner padding between the right edge of the Card and children of the CardView. -->
-        <attr name="contentPaddingRight" format="dimension" />
+        <attr name="optRoundContentPaddingRight" format="dimension" />
         <!-- Inner padding between the top edge of the Card and children of the CardView. -->
-        <attr name="contentPaddingTop" format="dimension" />
+        <attr name="optRoundContentPaddingTop" format="dimension" />
         <!-- Inner padding between the bottom edge of the Card and children of the CardView. -->
-        <attr name="contentPaddingBottom" format="dimension" />
+        <attr name="optRoundContentPaddingBottom" format="dimension" />
     </declare-styleable>
 </resources>
