@@ -10,7 +10,7 @@ Support Android 2.1+
 
 ## layout
 ```
-    //attribute:cardCornerRadius replace optRoundCardCornerRadius
+    //rename attribute:cardCornerRadius replace optRoundCardCornerRadius
     <com.github.captain_miao.optroundcardview.OptRoundCardView
         android:id="@+id/top_card_view"
         android:layout_width="match_parent"
