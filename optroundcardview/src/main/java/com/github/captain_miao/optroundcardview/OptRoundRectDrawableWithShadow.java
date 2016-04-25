@@ -408,6 +408,14 @@ public class OptRoundRectDrawableWithShadow extends RoundRectDrawableWithShadow 
         invalidateSelf();
     }
 
+    public void showEdgeShadow(boolean left, boolean top, boolean right, boolean bottom){
+        this.leftEdgeShadow = left;
+        this.topEdgeShadow = top;
+        this.rightEdgeShadow = right;
+        this.bottomEdgeShadow = bottom;
+        invalidateSelf();
+    }
+
     public void showLeftEdgeShadow(boolean show) {
         this.leftEdgeShadow = show;
         invalidateSelf();

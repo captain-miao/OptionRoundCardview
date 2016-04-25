@@ -424,4 +424,76 @@ public class OptRoundCardView extends FrameLayout implements CardViewDelegate {
             ((OptRoundRectDrawableWithShadow) getBackground()).showCorner(leftTop, rightTop, leftBottom, rightBottom);
         }
     }
+
+    public void showLeftTopCorner(boolean show){
+        if (SDK_LOLLIPOP) {
+            //((OptRoundRectDrawable) getBackground()).showCorner(leftTop, rightTop, leftBottom, rightBottom);
+        } else {
+            ((OptRoundRectDrawableWithShadow) getBackground()).showLeftTopRect(!show);
+        }
+    }
+
+    public void showRightTopCorner(boolean show){
+        if (SDK_LOLLIPOP) {
+            //((OptRoundRectDrawable) getBackground()).showCorner(leftTop, rightTop, leftBottom, rightBottom);
+        } else {
+            ((OptRoundRectDrawableWithShadow) getBackground()).showRightTopRect(!show);
+        }
+    }
+
+    public void showLeftBottomCorner(boolean show){
+        if (SDK_LOLLIPOP) {
+            //((OptRoundRectDrawable) getBackground()).showCorner(leftTop, rightTop, leftBottom, rightBottom);
+        } else {
+            ((OptRoundRectDrawableWithShadow) getBackground()).showLeftBottomRect(!show);
+        }
+    }
+
+    public void showRightBottomCorner(boolean show){
+        if (SDK_LOLLIPOP) {
+            //((OptRoundRectDrawable) getBackground()).showCorner(leftTop, rightTop, leftBottom, rightBottom);
+        } else {
+            ((OptRoundRectDrawableWithShadow) getBackground()).showRightBottomRect(!show);
+        }
+    }
+
+    /**
+     * show Edge Shadow
+     */
+    public void showEdgeShadow(boolean left, boolean top, boolean right, boolean bottom){
+        if (SDK_LOLLIPOP) {
+            //((OptRoundRectDrawable) getBackground()).showCorner(leftTop, rightTop, leftBottom, rightBottom);
+        } else {
+            ((OptRoundRectDrawableWithShadow) getBackground()).showEdgeShadow(left, top, right, bottom);
+        }
+    }
+
+    public void showLeftEdgeShadow(boolean show){
+        if (SDK_LOLLIPOP) {
+            //((OptRoundRectDrawable) getBackground()).showCorner(leftTop, rightTop, leftBottom, rightBottom);
+        } else {
+            ((OptRoundRectDrawableWithShadow) getBackground()).showLeftEdgeShadow(show);
+        }
+    }
+    public void showTopEdgeShadow(boolean show){
+        if (SDK_LOLLIPOP) {
+            //((OptRoundRectDrawable) getBackground()).showCorner(leftTop, rightTop, leftBottom, rightBottom);
+        } else {
+            ((OptRoundRectDrawableWithShadow) getBackground()).showTopEdgeShadow(show);
+        }
+    }
+    public void showRightEdgeShadow(boolean show){
+        if (SDK_LOLLIPOP) {
+            //((OptRoundRectDrawable) getBackground()).showCorner(leftTop, rightTop, leftBottom, rightBottom);
+        } else {
+            ((OptRoundRectDrawableWithShadow) getBackground()).showRightEdgeShadow(show);
+        }
+    }
+    public void showBottomEdgeShadow(boolean show){
+        if (SDK_LOLLIPOP) {
+            //((OptRoundRectDrawable) getBackground()).showCorner(leftTop, rightTop, leftBottom, rightBottom);
+        } else {
+            ((OptRoundRectDrawableWithShadow) getBackground()).showBottomEdgeShadow(show);
+        }
+    }
 }

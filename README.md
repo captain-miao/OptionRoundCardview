@@ -20,7 +20,8 @@ Support Android 2.1+
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         app:optRoundCardCornerRadius="8dp"
         app:optRoundCardLeftBottomCorner="false"
-        app:optRoundCardRightBottomCorner="false">
+        app:optRoundCardRightBottomCorner="false"
+        app:optRoundCardBottomEdges="false">
 
         <TextView
             android:id="@+id/section_label"
@@ -36,6 +37,7 @@ Support Android 2.1+
 ## API
 
  - `showCorner(boolean leftTop, boolean rightTop, boolean leftBottom, boolean rightBottom)`
+ - `showEdgeShadow(boolean left, boolean top, boolean right, boolean bottom)//only work for pre API 21.`
  
 
  
