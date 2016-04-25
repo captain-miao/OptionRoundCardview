@@ -72,9 +72,9 @@ public class OptRoundCardView extends FrameLayout implements CardViewDelegate {
     private static final CardViewImpl IMPL;
 
     static {
-        if (Build.VERSION.SDK_INT >= 21) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             IMPL = new CardViewApi21();
-        } else if (Build.VERSION.SDK_INT >= 17) {
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             IMPL = new CardViewJellybeanMr1();
         } else {
             IMPL = new CardViewEclairMr1();
@@ -234,9 +234,22 @@ public class OptRoundCardView extends FrameLayout implements CardViewDelegate {
         flag = a.getBoolean(R.styleable.OptRoundCardView_optRoundCardRightBottomCorner, true);
         cornerFlag += flag ? OptRoundRectDrawable.FLAG_RIGHT_BOTTOM_CORNER : 0;
 
+        int edgesFlag = 0;
+        flag = a.getBoolean(R.styleable.OptRoundCardView_optRoundCardLeftEdges, true);
+        edgesFlag += flag ? OptRoundRectDrawableWithShadow.FLAG_LEFT_EDGES : 0;
+
+        flag = a.getBoolean(R.styleable.OptRoundCardView_optRoundCardTopEdges, true);
+        edgesFlag += flag ? OptRoundRectDrawableWithShadow.FLAG_TOP_EDGES : 0;
+
+        flag = a.getBoolean(R.styleable.OptRoundCardView_optRoundCardRightEdges, true);
+        edgesFlag += flag ? OptRoundRectDrawableWithShadow.FLAG_RIGHT_EDGES : 0;
+
+        flag = a.getBoolean(R.styleable.OptRoundCardView_optRoundCardBottomEdges, true);
+        edgesFlag += flag ? OptRoundRectDrawableWithShadow.FLAG_BOTTOM_EDGES : 0;
+
         a.recycle();
 
-        IMPL.initialize(this, context, backgroundColor, radius, elevation, maxElevation, cornerFlag);
+        IMPL.initialize(this, context, backgroundColor, radius, elevation, maxElevation, cornerFlag, edgesFlag);
     }
 
     /**

@@ -25,7 +25,7 @@ class CardViewApi21 implements CardViewImpl {
 
     @Override
     public void initialize(CardViewDelegate cardView, Context context, int backgroundColor,
-                           float radius, float elevation, float maxElevation, int cornerFlag) {
+                           float radius, float elevation, float maxElevation, int cornerFlag, int edgesFlag) {
         final OptRoundRectDrawable backgroundDrawable = new OptRoundRectDrawable(backgroundColor, radius, cornerFlag);
         cardView.setBackgroundDrawable(backgroundDrawable);
         View view = (View) cardView;

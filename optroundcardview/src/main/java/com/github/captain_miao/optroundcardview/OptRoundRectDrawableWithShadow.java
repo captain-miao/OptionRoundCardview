@@ -26,6 +26,12 @@ import android.os.Build;
 
 @TargetApi(Build.VERSION_CODES.KITKAT)
 public class OptRoundRectDrawableWithShadow extends RoundRectDrawableWithShadow {
+    public static final int FLAG_LEFT_EDGES   = 0x00000001;
+    public static final int FLAG_TOP_EDGES    = 0x00000002;
+    public static final int FLAG_RIGHT_EDGES  = 0x00000004;
+    public static final int FLAG_BOTTOM_EDGES = 0x00000008;
+
+
     private boolean leftTopRect = false;
     private boolean rightTopRect = false;
     private boolean leftBottomRect = false;
@@ -37,12 +43,17 @@ public class OptRoundRectDrawableWithShadow extends RoundRectDrawableWithShadow 
     private boolean bottomEdgeShadow = true;
 
     public OptRoundRectDrawableWithShadow(Resources resources, int backgroundColor, float radius,
-                                          float shadowSize, float maxShadowSize, int cornerFlag) {
+                                  float shadowSize, float maxShadowSize, int cornerFlag, int edgesFlag) {
         super(resources, backgroundColor, radius, shadowSize, maxShadowSize);
         this.leftTopRect = (OptRoundRectDrawable.FLAG_LEFT_TOP_CORNER & cornerFlag) == 0;
         this.rightTopRect = (OptRoundRectDrawable.FLAG_RIGHT_TOP_CORNER & cornerFlag) == 0;
         this.leftBottomRect = (OptRoundRectDrawable.FLAG_LEFT_BOTTOM_CORNER & cornerFlag) == 0;
         this.rightBottomRect = (OptRoundRectDrawable.FLAG_RIGHT_BOTTOM_CORNER & cornerFlag) == 0;
+
+        this.leftEdgeShadow   = (FLAG_LEFT_EDGES   & edgesFlag) != 0;
+        this.topEdgeShadow    = (FLAG_TOP_EDGES    & edgesFlag) != 0;
+        this.rightEdgeShadow  = (FLAG_RIGHT_EDGES  & edgesFlag) != 0;
+        this.bottomEdgeShadow = (FLAG_BOTTOM_EDGES & edgesFlag) != 0;
         init();
     }
     public OptRoundRectDrawableWithShadow(Resources resources, int backgroundColor, float radius,

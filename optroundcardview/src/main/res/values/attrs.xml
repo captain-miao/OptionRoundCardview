@@ -26,6 +26,16 @@
         <attr name="optRoundCardLeftBottomCorner" format="boolean" />
         <!-- Corner radius for CardView. -->
         <attr name="optRoundCardRightBottomCorner" format="boolean" />
+
+        <!-- Left Edges for CardView. -->
+        <attr name="optRoundCardLeftEdges" format="boolean" />
+        <!-- Top Edges for CardView. -->
+        <attr name="optRoundCardTopEdges" format="boolean" />
+        <!-- Right Edges for CardView. -->
+        <attr name="optRoundCardRightEdges" format="boolean" />
+        <!-- Bottom Edges for CardView. -->
+        <attr name="optRoundCardBottomEdges" format="boolean" />
+
         <!-- Corner radius for CardView. -->
         <attr name="optRoundCardCornerRadius" format="dimension" />
         <!-- Elevation for CardView. -->

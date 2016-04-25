@@ -22,7 +22,7 @@ import android.content.Context;
  */
 interface CardViewImpl {
     void initialize(CardViewDelegate cardView, Context context, int backgroundColor, float radius,
-                    float elevation, float maxElevation, int cornerFlag);
+                    float elevation, float maxElevation, int cornerFlag, int edgesFlag);
 
     void setRadius(CardViewDelegate cardView, float radius);
 

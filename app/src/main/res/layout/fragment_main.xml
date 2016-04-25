@@ -15,7 +15,8 @@
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         app:optRoundCardCornerRadius="8dp"
         app:optRoundCardLeftBottomCorner="false"
-        app:optRoundCardRightBottomCorner="false">
+        app:optRoundCardRightBottomCorner="false"
+        app:optRoundCardBottomEdges="false">
 
         <TextView
             android:id="@+id/section_label"
@@ -29,13 +30,15 @@
         android:layout_height="1dp"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:background="@color/opt_round_card_view_shadow_end_color"/>
+        android:background="@color/colorAccent"/>
     <com.github.captain_miao.optroundcardview.OptRoundCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
-        app:optRoundCardCornerRadius="0dp">
+        app:optRoundCardCornerRadius="0dp"
+        app:optRoundCardTopEdges="false"
+        app:optRoundCardBottomEdges="false">
 
         <TextView
             android:id="@+id/section_labe2"
@@ -45,12 +48,14 @@
             android:text="center card"/>
 
     </com.github.captain_miao.optroundcardview.OptRoundCardView>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:background="@color/opt_round_card_view_shadow_end_color"/>
+        android:background="@color/colorAccent"/>
+
     <com.github.captain_miao.optroundcardview.OptRoundCardView
         android:id="@+id/bottom_card_view"
         android:layout_width="match_parent"
@@ -60,7 +65,8 @@
         android:layout_marginBottom="@dimen/activity_horizontal_margin"
         app:optRoundCardCornerRadius="8dp"
         app:optRoundCardLeftTopCorner="false"
-        app:optRoundCardRightTopCorner="false">
+        app:optRoundCardRightTopCorner="false"
+        app:optRoundCardTopEdges="false">
 
         <TextView
             android:id="@+id/section_labe3"
