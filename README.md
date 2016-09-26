@@ -2,7 +2,7 @@
 Android CardView that allows you custom round corner position.
 
 Base on Android support-v4 [CardView](https://android.googlesource.com/platform/frameworks/support.git) and [Slice](https://github.com/mthli/Slice)
-Support Android 2.1+
+Support Android 2.3+
 
 ## Screenshot
 
@@ -48,11 +48,12 @@ Get library from  [oss.sonatype.org.io](https://oss.sonatype.org/content/reposit
 repositories {
     
     maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+    maven { url "https://oss.sonatype.org/content/repositories/releases" }
 
 }
 
 dependencies {
-    compile 'com.github.captain-miao:optroundcardview:1.0.0-SNAPSHOT'
+    compile 'com.github.captain-miao:optroundcardview:1.0.0'
 }
 ```
 
