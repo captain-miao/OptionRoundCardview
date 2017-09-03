@@ -1,28 +1,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto"
-              xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:orientation="vertical"
-              tools:context="com.github.captain_miao.optionroundcardview.MainActivity$PlaceholderFragment">
+              android:orientation="vertical">
 
-<com.github.captain_miao.optroundcardview.OptRoundCardView
+    <com.github.captain_miao.optroundcardview.OptRoundCardView
         android:id="@+id/top_card_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_horizontal_margin"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        app:optRoundCardBottomEdges="false"
         app:optRoundCardCornerRadius="8dp"
         app:optRoundCardLeftBottomCorner="false"
-        app:optRoundCardRightBottomCorner="false"
-        app:optRoundCardBottomEdges="false">
+        app:optRoundCardRightBottomCorner="false">
 
         <TextView
             android:id="@+id/section_label"
-            android:padding="@dimen/activity_horizontal_margin"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_horizontal_margin"/>
 
     </com.github.captain_miao.optroundcardview.OptRoundCardView>
     <View
@@ -36,15 +34,15 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
+        app:optRoundCardBottomEdges="false"
         app:optRoundCardCornerRadius="0dp"
-        app:optRoundCardTopEdges="false"
-        app:optRoundCardBottomEdges="false">
+        app:optRoundCardTopEdges="false">
 
         <TextView
             android:id="@+id/section_labe2"
-            android:padding="@dimen/activity_horizontal_margin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="@dimen/activity_horizontal_margin"
             android:text="center card"/>
 
     </com.github.captain_miao.optroundcardview.OptRoundCardView>
@@ -60,9 +58,9 @@
         android:id="@+id/bottom_card_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_marginBottom="@dimen/activity_horizontal_margin"
         app:optRoundCardCornerRadius="8dp"
         app:optRoundCardLeftTopCorner="false"
         app:optRoundCardRightTopCorner="false"
@@ -70,9 +68,9 @@
 
         <ImageView
             android:id="@+id/section_labe3"
-            android:padding="@dimen/activity_horizontal_margin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="@dimen/activity_horizontal_margin"
             android:src="@mipmap/ic_launcher"/>
 
     </com.github.captain_miao.optroundcardview.OptRoundCardView>

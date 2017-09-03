@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <com.github.captain_miao.optroundcardview.OptRoundCardView
+        android:id="@+id/top_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        app:optRoundCardCornerRadius="4dp"
+        app:optRoundCardBottomEdges="true"
+        app:optRoundCardLeftTopCorner="true"
+        app:optRoundCardLeftBottomCorner="true"
+        app:optRoundCardRightTopCorner="true"
+        app:optRoundCardRightBottomCorner="true">
+
+        <TextView
+            android:id="@+id/section_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_horizontal_margin"/>
+
+    </com.github.captain_miao.optroundcardview.OptRoundCardView>
+
+
+</LinearLayout>

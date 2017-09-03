@@ -9,6 +9,7 @@ Support Android 2.3+
 ![option_round_card_view](https://raw.githubusercontent.com/captain-miao/me.github.com/master/cardview/option_round_card_view.gif "option_round_card_view")
 
 ## layout
+must add layout_margin space for draw Corner
 ```
     //rename attribute:cardCornerRadius replace optRoundCardCornerRadius
     <com.github.captain_miao.optroundcardview.OptRoundCardView
@@ -18,6 +19,7 @@ Support Android 2.3+
         android:layout_marginTop="@dimen/activity_horizontal_margin"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
         app:optRoundCardCornerRadius="8dp"
         app:optRoundCardLeftBottomCorner="false"
         app:optRoundCardRightBottomCorner="false"
