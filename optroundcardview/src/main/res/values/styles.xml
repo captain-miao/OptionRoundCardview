@@ -15,12 +15,13 @@
 -->
 <resources>
     <style name="OptRoundCardView">
-        <item name="optRoundCardBackgroundColor">@color/opt_round_card_view_light_background</item>
         <item name="optRoundCardCornerRadius">@dimen/opt_round_card_view_default_radius</item>
         <item name="optRoundCardElevation">@dimen/opt_round_card_view_default_elevation</item>
         <item name="optRoundCardMaxElevation">@dimen/opt_round_card_view_default_elevation</item>
         <item name="optRoundCardUseCompatPadding">false</item>
         <item name="optRoundCardPreventCornerOverlap">true</item>
+    </style>
+    <style name="OptRoundCardView.DayNight">
     </style>
     <style name="OptRoundCardView.Light">
         <item name="optRoundCardBackgroundColor">@color/opt_round_card_view_light_background</item>

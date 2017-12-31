@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -17,4 +17,13 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
+
+
+    <style name="OptRoundCardViewDayNight">
+        <item name="optRoundCardCornerRadius">@dimen/opt_round_card_view_default_radius</item>
+        <item name="optRoundCardElevation">@dimen/opt_round_card_view_default_elevation</item>
+        <item name="optRoundCardMaxElevation">@dimen/opt_round_card_view_default_elevation</item>
+        <item name="optRoundCardUseCompatPadding">false</item>
+        <item name="optRoundCardPreventCornerOverlap">true</item>
+    </style>
 </resources>

@@ -40,11 +40,11 @@ public class PlaceholderFragment extends Fragment {
         OptRoundCardView roundCardView;
         switch (section){
             case 1:
-                roundCardView = (OptRoundCardView) rootView.findViewById(R.id.bottom_card_view);
+                roundCardView = rootView.findViewById(R.id.bottom_card_view);
                 roundCardView.showCorner(false, false, false, false);
                 break;
             case 2:
-                roundCardView = (OptRoundCardView) rootView.findViewById(R.id.top_card_view);
+                roundCardView = rootView.findViewById(R.id.top_card_view);
                 roundCardView.showCorner(false, false, false, false);
                 break;
             default:
@@ -52,7 +52,7 @@ public class PlaceholderFragment extends Fragment {
         }
 
 
-        TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+        TextView textView = rootView.findViewById(R.id.section_label);
         textView.setText(getString(R.string.section_format, section));
         return rootView;
     }

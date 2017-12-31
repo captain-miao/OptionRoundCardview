@@ -17,10 +17,11 @@
 package com.github.captain_miao.optroundcardview;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.graphics.Rect;
 import android.os.Build;
-
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 
@@ -68,7 +69,7 @@ import android.widget.FrameLayout;
  * @attr ref android.support.v7.cardview.R.styleable#CardView_contentPaddingBottom
  */
 public class OptRoundCardView extends FrameLayout implements CardViewDelegate {
-
+    private static final int[] COLOR_BACKGROUND_ATTR = {android.R.attr.colorBackground};
     private static final CardViewImpl IMPL;
 
     static {
@@ -139,7 +140,7 @@ public class OptRoundCardView extends FrameLayout implements CardViewDelegate {
      * <code>false</code>.
      *
      * @param useCompatPadding <code>true></code> if CardView should add padding for the shadows on
-     *      platforms Lollipop and above.
+     *                         platforms Lollipop and above.
      * @attr ref android.support.v7.cardview.R.styleable#CardView_cardUseCompatPadding
      */
     public void setUseCompatPadding(boolean useCompatPadding) {
@@ -201,8 +202,27 @@ public class OptRoundCardView extends FrameLayout implements CardViewDelegate {
 
     private void initialize(Context context, AttributeSet attrs, int defStyleAttr) {
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.OptRoundCardView, defStyleAttr,
-                R.style.OptRoundCardView_Light);
-        int backgroundColor = a.getColor(R.styleable.OptRoundCardView_optRoundCardBackgroundColor, 0);
+                R.style.OptRoundCardView_DayNight);
+        ColorStateList backgroundColor;
+
+        if (a.hasValue(R.styleable.OptRoundCardView_optRoundCardBackgroundColor)) {
+            // use xml color
+            backgroundColor = a.getColorStateList(R.styleable.OptRoundCardView_optRoundCardBackgroundColor);
+        } else {
+            // There isn't one set, so we'll compute one based on the theme
+            final TypedArray aa = getContext().obtainStyledAttributes(COLOR_BACKGROUND_ATTR);
+            final int themeColorBackground = aa.getColor(0, 0);
+            aa.recycle();
+
+            // If the theme colorBackground is light, use our own light color, otherwise dark
+            final float[] hsv = new float[3];
+            Color.colorToHSV(themeColorBackground, hsv);
+            backgroundColor = ColorStateList.valueOf(hsv[2] > 0.5f
+                    ? getResources().getColor(R.color.opt_round_card_view_light_background)
+                    : getResources().getColor(R.color.opt_round_card_view_dark_background));
+        }
+
+
         float radius = a.getDimension(R.styleable.OptRoundCardView_optRoundCardCornerRadius, 0);
         float elevation = a.getDimension(R.styleable.OptRoundCardView_optRoundCardElevation, 0);
         float maxElevation = a.getDimension(R.styleable.OptRoundCardView_optRoundCardMaxElevation, 0);
@@ -249,7 +269,7 @@ public class OptRoundCardView extends FrameLayout implements CardViewDelegate {
 
         a.recycle();
 
-        IMPL.initialize(this, context, backgroundColor, radius, elevation, maxElevation, cornerFlag, edgesFlag);
+        IMPL.initialize(this, context, backgroundColor.getDefaultColor(), radius, elevation, maxElevation, cornerFlag, edgesFlag);
     }
 
     /**
@@ -385,7 +405,7 @@ public class OptRoundCardView extends FrameLayout implements CardViewDelegate {
      * corners on pre-Lollipop platforms.
      *
      * @return True if CardView prevents overlaps with rounded corners on platforms before Lollipop.
-     *         Default value is <code>true</code>.
+     * Default value is <code>true</code>.
      */
     @Override
     public boolean getPreventCornerOverlap() {
@@ -414,10 +434,11 @@ public class OptRoundCardView extends FrameLayout implements CardViewDelegate {
     }
 
     private static final boolean SDK_LOLLIPOP = Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
+
     /**
      * show corner or rect
      */
-    public void showCorner(boolean leftTop, boolean rightTop, boolean leftBottom, boolean rightBottom){
+    public void showCorner(boolean leftTop, boolean rightTop, boolean leftBottom, boolean rightBottom) {
         if (SDK_LOLLIPOP) {
             ((OptRoundRectDrawable) getBackground()).showCorner(leftTop, rightTop, leftBottom, rightBottom);
         } else {
@@ -425,7 +446,7 @@ public class OptRoundCardView extends FrameLayout implements CardViewDelegate {
         }
     }
 
-    public void showLeftTopCorner(boolean show){
+    public void showLeftTopCorner(boolean show) {
         if (SDK_LOLLIPOP) {
             //((OptRoundRectDrawable) getBackground()).showCorner(leftTop, rightTop, leftBottom, rightBottom);
         } else {
@@ -433,7 +454,7 @@ public class OptRoundCardView extends FrameLayout implements CardViewDelegate {
         }
     }
 
-    public void showRightTopCorner(boolean show){
+    public void showRightTopCorner(boolean show) {
         if (SDK_LOLLIPOP) {
             //((OptRoundRectDrawable) getBackground()).showCorner(leftTop, rightTop, leftBottom, rightBottom);
         } else {
@@ -441,7 +462,7 @@ public class OptRoundCardView extends FrameLayout implements CardViewDelegate {
         }
     }
 
-    public void showLeftBottomCorner(boolean show){
+    public void showLeftBottomCorner(boolean show) {
         if (SDK_LOLLIPOP) {
             //((OptRoundRectDrawable) getBackground()).showCorner(leftTop, rightTop, leftBottom, rightBottom);
         } else {
@@ -449,7 +470,7 @@ public class OptRoundCardView extends FrameLayout implements CardViewDelegate {
         }
     }
 
-    public void showRightBottomCorner(boolean show){
+    public void showRightBottomCorner(boolean show) {
         if (SDK_LOLLIPOP) {
             //((OptRoundRectDrawable) getBackground()).showCorner(leftTop, rightTop, leftBottom, rightBottom);
         } else {
@@ -460,7 +481,7 @@ public class OptRoundCardView extends FrameLayout implements CardViewDelegate {
     /**
      * show Edge Shadow
      */
-    public void showEdgeShadow(boolean left, boolean top, boolean right, boolean bottom){
+    public void showEdgeShadow(boolean left, boolean top, boolean right, boolean bottom) {
         if (SDK_LOLLIPOP) {
             //((OptRoundRectDrawable) getBackground()).showCorner(leftTop, rightTop, leftBottom, rightBottom);
         } else {
@@ -468,28 +489,31 @@ public class OptRoundCardView extends FrameLayout implements CardViewDelegate {
         }
     }
 
-    public void showLeftEdgeShadow(boolean show){
+    public void showLeftEdgeShadow(boolean show) {
         if (SDK_LOLLIPOP) {
             //((OptRoundRectDrawable) getBackground()).showCorner(leftTop, rightTop, leftBottom, rightBottom);
         } else {
             ((OptRoundRectDrawableWithShadow) getBackground()).showLeftEdgeShadow(show);
         }
     }
-    public void showTopEdgeShadow(boolean show){
+
+    public void showTopEdgeShadow(boolean show) {
         if (SDK_LOLLIPOP) {
             //((OptRoundRectDrawable) getBackground()).showCorner(leftTop, rightTop, leftBottom, rightBottom);
         } else {
             ((OptRoundRectDrawableWithShadow) getBackground()).showTopEdgeShadow(show);
         }
     }
-    public void showRightEdgeShadow(boolean show){
+
+    public void showRightEdgeShadow(boolean show) {
         if (SDK_LOLLIPOP) {
             //((OptRoundRectDrawable) getBackground()).showCorner(leftTop, rightTop, leftBottom, rightBottom);
         } else {
             ((OptRoundRectDrawableWithShadow) getBackground()).showRightEdgeShadow(show);
         }
     }
-    public void showBottomEdgeShadow(boolean show){
+
+    public void showBottomEdgeShadow(boolean show) {
         if (SDK_LOLLIPOP) {
             //((OptRoundRectDrawable) getBackground()).showCorner(leftTop, rightTop, leftBottom, rightBottom);
         } else {

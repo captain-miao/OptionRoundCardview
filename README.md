@@ -9,7 +9,7 @@ Support Android 2.3+
 ![option_round_card_view](https://raw.githubusercontent.com/captain-miao/me.github.com/master/cardview/option_round_card_view.gif "option_round_card_view")
 
 ## layout
-must add layout_margin space for draw Corner
+must add enough layout_margin space for draw Corner
 ```
     //rename attribute:cardCornerRadius replace optRoundCardCornerRadius
     <com.github.captain_miao.optroundcardview.OptRoundCardView
@@ -41,7 +41,11 @@ must add layout_margin space for draw Corner
  - `showCorner(boolean leftTop, boolean rightTop, boolean leftBottom, boolean rightBottom)`
  - `showEdgeShadow(boolean left, boolean top, boolean right, boolean bottom)//only work for pre API 21.`
  
-
+## Theme (default DayNight)
+ - style="@style/OptRoundCardView.DayNight"
+ - style="@style/OptRoundCardView.Light"
+ - style="@style/OptRoundCardView.Dark"
+ 
  
 ## Gradle
 Get library from  [oss.sonatype.org.io](https://oss.sonatype.org/content/repositories/snapshots)
